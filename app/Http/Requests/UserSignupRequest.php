@@ -26,7 +26,7 @@ class UserSignupRequest extends FormRequest
             'password' => 'required|regex:/[0-9]/|regex:/[a-z]/|regex:/[A-Z]/|min:8|max:64',
             'email' => 'required|email',
             'created' => 'required|date_format:Y-m-d H:i:s',
-            'role' => 'required|in:admin,user'
+            'role' => 'required|in:admin,user',
         ];
     }
 }

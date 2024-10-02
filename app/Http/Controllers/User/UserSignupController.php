@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\User;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\UserSignupRequest;
 use App\Models\User;
 use Illuminate\Http\JsonResponse;
@@ -11,9 +12,7 @@ use Throwable;
 
 class UserSignupController extends Controller
 {
-    public function __construct(private User $user)
-    {    
-    }
+    public function __construct(private User $user) {}
 
     public function __invoke(UserSignupRequest $request): JsonResponse
     {
@@ -29,10 +28,11 @@ class UserSignupController extends Controller
     private function handleError(Throwable $th): JsonResponse
     {
         Log::error($th->getMessage());
+
         return response()->json(
             [
                 'success' => false,
-                'message' => 'Unable to create user'
+                'message' => 'Unable to create user',
             ],
             Response::HTTP_INTERNAL_SERVER_ERROR
         );

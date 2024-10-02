@@ -17,18 +17,18 @@ class UserDetailsTest extends TestCase
             'name' => 'Capt. Birds Eye',
             'email' => 'fish_fingers69@example.com',
             'created' => '2024-10-01 00:00:00',
-            'role' => 'admin'
+            'role' => 'admin',
         ];
         $user = User::factory()->create($userDetails);
-        $response = $this->get(route('user', $user->id));
-        
-        $response->assertStatus(200)
+
+        $this->get(route('user', $user->id))
+            ->assertStatus(Response::HTTP_OK)
             ->assertJson(array_merge($userDetails, ['id' => $user->id]));
     }
-    
+
     public function test_requesting_an_invalid_user_returns_404_not_found(): void
     {
-        $response = $this->get(route('user', 69420));
-        $response->assertStatus(Response::HTTP_NOT_FOUND);
+        $this->get(route('user', 69420))
+            ->assertStatus(Response::HTTP_NOT_FOUND);
     }
 }

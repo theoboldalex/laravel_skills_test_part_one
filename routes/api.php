@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\UserDetailsController;
-use App\Http\Controllers\UserSignupController;
+use App\Http\Controllers\User\UserDeleteController;
+use App\Http\Controllers\User\UserDetailsController;
+use App\Http\Controllers\User\UserSignupController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -10,5 +11,6 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 Route::get('/users/{user}', UserDetailsController::class)->name('user');
+Route::delete('/users/{user}', UserDeleteController::class)->name('user.delete');
 
 Route::post('/signup', UserSignupController::class)->name('user.signup');

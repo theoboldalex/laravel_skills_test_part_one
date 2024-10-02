@@ -26,10 +26,16 @@ These are the requirements for the system:
 
 ## What I am looking for
 
-* Submit something that I can run locally
-* Commiting changes with good messages as you go is very helpful
-* You can update the README or add a NOTES.md detailing any decisions/tradeoffs you made, or changes you would make with more time
-* Clean, secure, modular code written to your own standards of what good looks like. Add concise comments in the code if you want to explain a decision. 
-* Pragmatism. I am not looking for complex solutions.
-* Feel free to install and use additional packages
-* NO AI TOOLS TO BE USED
+- Submit something that I can run locally
+- Commiting changes with good messages as you go is very helpful
+- You can update the README or add a NOTES.md detailing any decisions/tradeoffs you made, or changes you would make with more time
+- Clean, secure, modular code written to your own standards of what good looks like. Add concise comments in the code if you want to explain a decision. 
+- Pragmatism. I am not looking for complex solutions.
+- Feel free to install and use additional packages
+- NO AI TOOLS TO BE USED
+
+## Extra Credit
+Drive out a new feature that adds an endpoint for deleting a user and meets the following criteria
+
+- Only user accounts that have been created in the last 14 days can be deleted
+- If a user cannot be deleted, you should return an appropriate error to the client

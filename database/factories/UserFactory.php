@@ -27,7 +27,7 @@ class UserFactory extends Factory
             'email' => fake()->unique()->safeEmail(),
             'created' => '2023-09-01 00:00:00',
             'password' => static::$password ??= Hash::make('password'),
-            'role' => 'user'
+            'role' => 'user',
         ];
     }
 }
