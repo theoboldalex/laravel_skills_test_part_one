@@ -50,7 +50,7 @@ class UserDeleteTest extends TestCase
                     'created' => '2024-10-01 00:00:00',
                 ]));
 
-            $mock->shouldReceive('delete')
+            $mock->shouldReceive('destroy')
                 ->once()
                 ->andThrow(new \Exception('Database error'));
         });

@@ -22,7 +22,7 @@ class UserDeleteController extends Controller
                 throw new Exception("The user account with id {$user->id} is older than 14 days and cannot be deleted");
             }
 
-            $this->user->delete();
+            $this->user->destroy($user->id);
         } catch (\Throwable $th) {
             Log::error($th->getMessage());
 
