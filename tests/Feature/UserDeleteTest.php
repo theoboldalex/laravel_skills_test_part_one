@@ -68,7 +68,7 @@ class UserDeleteTest extends TestCase
 
     public function test_unable_to_delete_a_user_because_the_account_is_older_than_14_days(): void
     {
-        $user = User::factory()->create([
+        User::factory()->create([
             'id' => self::USER_ID,
             'created' => '2023-05-01 00:00:00',
         ]);

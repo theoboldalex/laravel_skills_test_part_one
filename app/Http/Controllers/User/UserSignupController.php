@@ -17,7 +17,7 @@ class UserSignupController extends Controller
     public function __invoke(UserSignupRequest $request): JsonResponse
     {
         try {
-            $user = $this->user->create($request->only(['name', 'password', 'email', 'created', 'role']));
+            $user = $this->user->create($request->validated());
         } catch (\Throwable $th) {
             return $this->handleError($th);
         }
